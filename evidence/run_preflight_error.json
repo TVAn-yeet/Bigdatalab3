@@ -1,0 +1,7 @@
+{
+  "run_id": "c1d770dd-e0ea-4c39-8158-d544f2baaeee",
+  "job": "preflight",
+  "status": "FAIL",
+  "error_type": "Py4JJavaError",
+  "message": "An error occurred while calling z:org.apache.spark.api.python.PythonRDD.collectAndServe.\n: org.apache.spark.SparkException: Job aborted due to stage failure: Task 4 in stage 0.0 failed 4 times, most recent failure: Lost task 4.3 in stage 0.0 (TID 13) (10.10.0.11 executor 1): java.io.IOException: Cannot run program \"/home/bigdatanhom1/lab3env/bin/python3\": error=2, No such file or directory\n\tat java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1143)\n\tat java.base/java.lang.ProcessBuild"
+}

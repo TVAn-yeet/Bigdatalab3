@@ -1,0 +1,11 @@
+{
+  "run_id": "b2efcf63-2b4f-456e-a493-0e5b14f5980d",
+  "job": "preflight",
+  "status": "COMPLETE",
+  "input_manifest_sha256": "3cdfc84b26d290100b39ce65d4ff7cb22839f4021b9caf26897c8a4ff68091a2",
+  "implementation_sha256": "9bf4bb5788e8b855572bde4b65972b2669df963bd54c3d83b18e05cd6415066c",
+  "scaffold_sha256": "530debbdc30010ab0dd9f082224b3666749e626525f14a9e3a0a8a7c120d6ccf",
+  "outputs": [
+    "s3a://research-lakehouse/lab3/g01/attempt01/preflight-b2efcf63-2b4f-456e-a493-0e5b14f5980d"
+  ]
+}

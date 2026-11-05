@@ -1,0 +1,126 @@
+{
+  "partition_tasks": [
+    {
+      "host": "lab3-worker-1",
+      "pid": 9863,
+      "partition": 0
+    },
+    {
+      "host": "lab3-worker-1",
+      "pid": 9862,
+      "partition": 1
+    },
+    {
+      "host": "lab3-worker-2",
+      "pid": 9956,
+      "partition": 2
+    },
+    {
+      "host": "lab3-worker-2",
+      "pid": 9957,
+      "partition": 3
+    },
+    {
+      "host": "lab3-worker-1",
+      "pid": 9862,
+      "partition": 4
+    },
+    {
+      "host": "lab3-worker-1",
+      "pid": 9863,
+      "partition": 5
+    },
+    {
+      "host": "lab3-worker-2",
+      "pid": 9957,
+      "partition": 6
+    },
+    {
+      "host": "lab3-worker-2",
+      "pid": 9956,
+      "partition": 7
+    },
+    {
+      "host": "lab3-worker-1",
+      "pid": 9862,
+      "partition": 8
+    },
+    {
+      "host": "lab3-worker-1",
+      "pid": 9863,
+      "partition": 9
+    },
+    {
+      "host": "lab3-worker-2",
+      "pid": 9957,
+      "partition": 10
+    },
+    {
+      "host": "lab3-worker-2",
+      "pid": 9956,
+      "partition": 11
+    },
+    {
+      "host": "lab3-worker-1",
+      "pid": 9863,
+      "partition": 12
+    },
+    {
+      "host": "lab3-worker-1",
+      "pid": 9862,
+      "partition": 13
+    },
+    {
+      "host": "lab3-worker-2",
+      "pid": 9957,
+      "partition": 14
+    },
+    {
+      "host": "lab3-worker-2",
+      "pid": 9956,
+      "partition": 15
+    },
+    {
+      "host": "lab3-worker-1",
+      "pid": 9862,
+      "partition": 16
+    },
+    {
+      "host": "lab3-worker-1",
+      "pid": 9863,
+      "partition": 17
+    },
+    {
+      "host": "lab3-worker-2",
+      "pid": 9957,
+      "partition": 18
+    },
+    {
+      "host": "lab3-worker-2",
+      "pid": 9956,
+      "partition": 19
+    },
+    {
+      "host": "lab3-worker-1",
+      "pid": 9862,
+      "partition": 20
+    },
+    {
+      "host": "lab3-worker-1",
+      "pid": 9863,
+      "partition": 21
+    },
+    {
+      "host": "lab3-worker-2",
+      "pid": 9956,
+      "partition": 22
+    },
+    {
+      "host": "lab3-worker-2",
+      "pid": 9957,
+      "partition": 23
+    }
+  ],
+  "distinct_hosts": 2,
+  "interpretation": "Distinct hosts demonstrate placements, not distinct physical servers. Keep Spark UI/event-log evidence too."
+}
