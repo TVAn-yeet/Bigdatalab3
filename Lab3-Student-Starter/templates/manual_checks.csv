@@ -1,6 +1,6 @@
 check_id,operator,predicted_outcome,observed_outcome,evidence_location,explanation
 H02,,,,,
 B03,,,,,
-M06,,,,,
+M06,Member C,"Silver versionAsOf(initial) matches handoff logical digest exactly (9610 rows, c50f8252bfb91890975d26b16fe1d2b32f0e283a58e46bd16260b4a3cca0bf0d); no modification from subsequent merge","PASS - silver_time_travel.jsonl logical sha256 equals c50f8252bfb91890975d26b16fe1d2b32f0e283a58e46bd16260b4a3cca0bf0d",evidence/silver_time_travel.jsonl,Delta snapshot isolation allows historical reads via versionAsOf without interference from later commits
 Q03,,,,,
 R05,,,,,
