@@ -14,7 +14,51 @@ def build_gold(silver_df):
     Cast sums/min/max to decimal(18,2), mean/rate to decimal(18,6).
     No collect(), Pandas, Python UDF, or reference-sample join here.
     """
-    raise NotImplementedError('TODO 1: build_gold')
+    from pyspark.sql import functions as F
+    from pyspark.sql.types import DecimalType
+
+    # Keep the aggregation distributed. The two ratios use decimal operands
+    # so Spark does not perform integer division or introduce float rounding.
+    grouped = silver_df.groupBy('site', 'event_date').agg(
+        F.count(F.lit(1)).cast('long').alias('n_observations'),
+        F.sum(F.col('temperature_c')).cast(DecimalType(18, 2)).alias('sum_temperature_c'),
+        F.min(F.col('temperature_c')).cast(DecimalType(18, 2)).alias('min_temperature_c'),
+        F.max(F.col('temperature_c')).cast(DecimalType(18, 2)).alias('max_temperature_c'),
+        F.sum(F.when(F.col('is_late'), F.lit(1)).otherwise(F.lit(0)))
+         .cast('long').alias('n_late'),
+        F.sum(F.when(F.col('temperature_c') > F.lit(25), F.lit(1)).otherwise(F.lit(0)))
+         .cast('long').alias('n_above_25'),
+        F.countDistinct(F.col('sensor_id')).cast('long').alias('n_sensors'),
+    )
+
+    observation_count = F.col('n_observations').cast(DecimalType(18, 0))
+    return (
+        grouped
+        .withColumn(
+            'mean_temperature_c',
+            (F.col('sum_temperature_c') / observation_count).cast(DecimalType(18, 6)),
+        )
+        .withColumn(
+            'late_rate',
+            (
+                F.col('n_late').cast(DecimalType(18, 0))
+                / observation_count
+            ).cast(DecimalType(18, 6)),
+        )
+        .select(
+            'site',
+            'event_date',
+            'n_observations',
+            'sum_temperature_c',
+            'mean_temperature_c',
+            'min_temperature_c',
+            'max_temperature_c',
+            'n_late',
+            'late_rate',
+            'n_above_25',
+            'n_sensors',
+        )
+    )
 
 
 def choose_revisions(changes_df):
