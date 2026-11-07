@@ -1,6 +1,6 @@
 member_id,role,authored_file,change_description,test_evidence,independent_cross_check,exit_response_file
 A,Data ingress,,,,,
 B,Lakehouse modeling,,,,,
-C,Incremental engineer,,,,,
+C,Incremental engineer,templates/student_impl.py,"Implemented choose_revisions (Window row_number) and merge_silver (DeltaTable merge with strict update predicate)","tests/test_revisions_and_merge.py, tests/verify_task3_dataset.py, evidence/incremental.json",Check D's result-equivalence evidence,
 D,Analytics and measurement,,,,,
 E,Reproducibility reviewer,,,,,
